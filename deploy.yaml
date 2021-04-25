@@ -1,0 +1,24 @@
+---
+name: Deploy surge using yaml
+
+on:
+  push:
+    branches:
+      -main
+
+jobs: 
+  build:
+    name: JoB Deploy Test Surge
+    runs-on: ubuntu-latest
+    steps:
+      -uses: actions/checkout@v2
+      -name: Setup node
+      uses: actions/setup-node@v2-beta
+      with:
+        node-version: '12'
+      -name: Setup surge
+      run: npm install --global surge
+      -name: Excute surge
+      run: surge ./FirstExample.surge.sh --token ${{secrets.FirstExample_surge_token}}
+
+      ...
