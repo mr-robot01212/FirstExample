@@ -21,5 +21,3 @@ jobs:
       -name: Excute surge
       run: surge ./FirstExample.surge.sh --token ${{secrets.FirstExample_surge_token}}
 ...
-
-    
