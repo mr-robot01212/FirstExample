@@ -2,10 +2,10 @@
 name: learn-github-actions
 on: [push]
 jobs:
-  check-bats-version:
+  Install-surge:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
       - run: npm install -g surge
-      - run: surge ./FirstExample.surge.sh -token{{secrets.SURGE_TOKEN}}
+      - run: surge ./FirstExample_test1.surge.sh -token{{secrets.SURGE_TOKEN}}
